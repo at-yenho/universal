@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { Hero }         from '../hero';
 import { HeroService }  from '../hero.service';
 
+// just run 1 time when access component first time (except reload page)
+var date = new Date();
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
@@ -17,7 +19,9 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location
-  ) {}
+  ) {
+    console.log(date);
+  }
 
   ngOnInit(): void {
     this.getHero();
