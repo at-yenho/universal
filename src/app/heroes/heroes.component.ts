@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { H, k } from './../h';
+// import { H, k } from './../h';
 import { Inject } from '@angular/core';
 
 @Component({
@@ -15,9 +15,9 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
-    @Inject(k) s: H,
+    // @Inject(k) s: H,
   ) {
-    console.log('after s = ', s);
+    // console.log('after s = ', s);
     this.ss();
    }
   // can use assign value to param in func not constructor
