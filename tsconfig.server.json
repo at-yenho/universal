@@ -4,7 +4,9 @@
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "commonjs",
-    "types": ["webpack-env"]    
+    "types": [
+      "node"
+    ]
   },
   "exclude": [
     "test.ts",
