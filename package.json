@@ -5,14 +5,15 @@
   "description": "Example project from an angular.io guide.",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "npm run serve:ssr",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server.js",
-    "build:client-and-server-bundles": "ng build --prod && ng run angular.io-example:server",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "build:client-and-server-bundles": "ng build --aot --prod && ng run angular.io-example:server",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "postinstall": "npm run build:ssr"
   },
   "keywords": [],
   "author": "",
@@ -57,5 +58,9 @@
     "typescript": "~3.4.3",
     "webpack-cli": "^3.1.0"
   },
-  "repository": {}
+  "repository": {},
+  "engines": {
+    "node": "11.10.1",
+    "npm": "6.9.0"
+  }
 }
